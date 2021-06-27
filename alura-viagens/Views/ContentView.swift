@@ -13,19 +13,10 @@ struct ContentView: View {
         GeometryReader { view in
             // MARK: - VStack Principal
             VStack {
-                
+                HeaderView()
+                    .frame(width: view.size.width, height: 200, alignment: .top)
                 List(viagens) { viagem in
-                    VStack(alignment: .leading) {
-                        Text(viagem.titulo)
-                        Image(viagem.imagem)
-                            .resizable()
-                            .frame(height: 125)
-                        HStack {
-                            Text(viagem.quantidadeDeDias)
-                            Spacer()
-                            Text(viagem.valor)
-                        }
-                    }
+                    CelulaViagemView(viagem: viagem)
                 }
             }
         }
