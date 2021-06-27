@@ -14,6 +14,7 @@
 		FB5D061526893B84000C7348 /* Viagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D061426893B84000C7348 /* Viagem.swift */; };
 		FB5D061726893C36000C7348 /* Dados.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D061626893C36000C7348 /* Dados.swift */; };
 		FB5D061926893D22000C7348 /* viagens.json in Resources */ = {isa = PBXBuildFile; fileRef = FB5D061826893D22000C7348 /* viagens.json */; };
+		FB5D061C26894267000C7348 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D061B26894267000C7348 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FB5D061426893B84000C7348 /* Viagem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viagem.swift; sourceTree = "<group>"; };
 		FB5D061626893C36000C7348 /* Dados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dados.swift; sourceTree = "<group>"; };
 		FB5D061826893D22000C7348 /* viagens.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = viagens.json; sourceTree = "<group>"; };
+		FB5D061B26894267000C7348 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +60,9 @@
 		FB5D060326891DF1000C7348 /* alura-viagens */ = {
 			isa = PBXGroup;
 			children = (
+				FB5D061A2689423E000C7348 /* Views */,
 				FB5D061326893B7A000C7348 /* Models */,
 				FB5D060426891DF1000C7348 /* alura_viagensApp.swift */,
-				FB5D060626891DF1000C7348 /* ContentView.swift */,
 				FB5D060826891DF3000C7348 /* Assets.xcassets */,
 				FB5D060D26891DF3000C7348 /* Info.plist */,
 				FB5D060A26891DF3000C7348 /* Preview Content */,
@@ -84,6 +86,15 @@
 				FB5D061626893C36000C7348 /* Dados.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FB5D061A2689423E000C7348 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB5D060626891DF1000C7348 /* ContentView.swift */,
+				FB5D061B26894267000C7348 /* HeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB5D061C26894267000C7348 /* HeaderView.swift in Sources */,
 				FB5D060726891DF1000C7348 /* ContentView.swift in Sources */,
 				FB5D061726893C36000C7348 /* Dados.swift in Sources */,
 				FB5D061526893B84000C7348 /* Viagem.swift in Sources */,
