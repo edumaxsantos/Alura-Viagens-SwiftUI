@@ -43,6 +43,11 @@ struct ContentView: View {
                     }
                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .background(Color.blue)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 10))
+                    .offset(x: 50)
+                    
+                    
+                    Spacer()
                     
                     Button(action: {}) {
                         Text("Pacotes")
@@ -50,8 +55,11 @@ struct ContentView: View {
                             .foregroundColor(Color.white)
                     }
                     .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.orange, lineWidth: 10))
                     .background(Color.orange)
+                    .offset(x: -50)
                 }
+                .offset(y: -25.0)
                 
                 
                 List {
