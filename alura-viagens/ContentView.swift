@@ -62,11 +62,9 @@ struct ContentView: View {
                 .offset(y: -25.0)
                 
                 
-                List {
-                    Text("Rio de Janeiro")
-                    Text("Ceará")
-                    Text("Atibaia")
-                    Text("Rio de Janeiro")
+                List(viagens) { viagem in
+                    VStack {
+                        Text(viagem.titulo)                    }
                 }
             }
         }
