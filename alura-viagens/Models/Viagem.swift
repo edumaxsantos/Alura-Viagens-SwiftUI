@@ -12,6 +12,7 @@ struct Viagem: Hashable, Codable, Identifiable {
     var id: Int
     var titulo: String
     var imagem: String
+    var valor: String
     var quantidadeDeDias: String
     var coordenada: Coordenada
     
