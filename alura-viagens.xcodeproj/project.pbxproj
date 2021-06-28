@@ -16,6 +16,7 @@
 		FB5D061926893D22000C7348 /* viagens.json in Resources */ = {isa = PBXBuildFile; fileRef = FB5D061826893D22000C7348 /* viagens.json */; };
 		FB5D061C26894267000C7348 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D061B26894267000C7348 /* HeaderView.swift */; };
 		FB5D061E2689435A000C7348 /* CelulaViagemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D061D2689435A000C7348 /* CelulaViagemView.swift */; };
+		FB5D06202689754A000C7348 /* MapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D061F2689754A000C7348 /* MapaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FB5D061826893D22000C7348 /* viagens.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = viagens.json; sourceTree = "<group>"; };
 		FB5D061B26894267000C7348 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		FB5D061D2689435A000C7348 /* CelulaViagemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelulaViagemView.swift; sourceTree = "<group>"; };
+		FB5D061F2689754A000C7348 /* MapaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				FB5D060626891DF1000C7348 /* ContentView.swift */,
 				FB5D061B26894267000C7348 /* HeaderView.swift */,
 				FB5D061D2689435A000C7348 /* CelulaViagemView.swift */,
+				FB5D061F2689754A000C7348 /* MapaView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB5D061C26894267000C7348 /* HeaderView.swift in Sources */,
+				FB5D06202689754A000C7348 /* MapaView.swift in Sources */,
 				FB5D060726891DF1000C7348 /* ContentView.swift in Sources */,
 				FB5D061726893C36000C7348 /* Dados.swift in Sources */,
 				FB5D061526893B84000C7348 /* Viagem.swift in Sources */,
