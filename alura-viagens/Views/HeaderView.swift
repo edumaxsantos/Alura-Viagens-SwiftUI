@@ -11,17 +11,22 @@ struct HeaderView: View {
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
-    var defaultSize: CGFloat {
-        return self.horizontalSizeClass == .compact ? 20 : 30
+    private func isCompact(yes compactValue: CGFloat, no regularValue: CGFloat) -> CGFloat {
+        return self.horizontalSizeClass == .compact ? compactValue : regularValue
     }
     
-    var defaultButtonSize: CGFloat {
-        return self.horizontalSizeClass == .compact ? 17 : 24
+    private var defaultSize: CGFloat {
+        return isCompact(yes: 20, no: 30)
     }
     
-    func defaultButtonOffset(width: CGFloat) -> CGFloat {
-        return self.horizontalSizeClass == .compact ? 50 : width / 4
+    private var defaultButtonSize: CGFloat {
+        return isCompact(yes: 17, no: 24)
     }
+    
+    private func defaultButtonOffset(width: CGFloat) -> CGFloat {
+        return isCompact(yes: 50, no: width / 4)
+    }
+    
     
     var body: some View {
         
@@ -32,7 +37,7 @@ struct HeaderView: View {
                     Text("alura viagens")
                         .foregroundColor(Color.white)
                         .font(.custom("Avenir Black", size: defaultSize))
-                        .padding(.top, 50)
+                        .padding(.top, isCompact(yes: 50, no: 90))
                     Text("ESPECIAL")
                         .foregroundColor(Color.white)
                         .font(.custom("Avenir Book", size: defaultSize))
@@ -46,7 +51,7 @@ struct HeaderView: View {
                     
                     
                 }
-                .frame(width: view.size.width, height: self.horizontalSizeClass == .compact ? 180 : 310, alignment: .top)
+                .frame(width: view.size.width, height: isCompact(yes:180, no: 310), alignment: .top)
                 .background(Color.purple)
                 
                 HStack {
@@ -55,7 +60,7 @@ struct HeaderView: View {
                             .font(.custom("Avenir Medium", size: defaultButtonSize))
                             .foregroundColor(Color.white)
                     }
-                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width: isCompact(yes: 100, no: 150), height: isCompact(yes: 50, no: 75), alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .background(Color.blue)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 10))
                     .offset(x: defaultButtonOffset(width: view.size.width))
@@ -68,12 +73,12 @@ struct HeaderView: View {
                             .font(.custom("Avenir Medium", size: defaultButtonSize))
                             .foregroundColor(Color.white)
                     }
-                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width: isCompact(yes: 100, no: 150), height: isCompact(yes: 50, no: 75), alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.orange, lineWidth: 10))
                     .background(Color.orange)
                     .offset(x: -(defaultButtonOffset(width: view.size.width)))
                 }
-                .offset(y: -25.0)
+                .offset(y: isCompact(yes: -25, no: -37.5))
             }
         }
         
@@ -82,7 +87,15 @@ struct HeaderView: View {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView()
-            .previewLayout(.fixed(width: 400, height: 220))
+        
+        Group {
+            HeaderView()
+                .environment(\.horizontalSizeClass, .compact)
+                .previewLayout(.fixed(width: 400, height: 220))
+            HeaderView()
+                .environment(\.horizontalSizeClass, .regular)
+                .previewLayout(.fixed(width: 835, height: 360))
+        }
+        
     }
 }
