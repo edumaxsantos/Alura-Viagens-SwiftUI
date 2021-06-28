@@ -12,20 +12,21 @@ struct ContentView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
-        
-        GeometryReader { view in
-            // MARK: - VStack Principal
-            VStack {
-                HeaderView()
-                    .frame(width: view.size.width, height: self.horizontalSizeClass == .compact ? 200 : 350, alignment: .top)
-                List(viagens) { viagem in
-                    CelulaViagemView(viagem: viagem)
+        NavigationView {
+            GeometryReader { view in
+                // MARK: - VStack Principal
+                VStack {
+                    HeaderView()
+                        .frame(width: view.size.width, height: self.horizontalSizeClass == .compact ? 200 : 350, alignment: .top)
+                    List(viagens) { viagem in
+                        NavigationLink(destination: MapaView(coordenada: viagem.localizacao).navigationBarTitle("Localização")) {
+                            CelulaViagemView(viagem: viagem)
+                        }
+                    }.navigationBarTitle("")
                 }
             }
-        }
-        .edgesIgnoringSafeArea(.all)
-        
-        
+            .edgesIgnoringSafeArea(.all)
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
