@@ -12,7 +12,7 @@ struct alura_viagensApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            SecaoPacotesView(nomeDaSecao: pacotesDeViagens[0].categoria.rawValue, pacotes: pacotesDeViagens)
+            ListaDePacotesView()
         }
     }
 }
