@@ -8,27 +8,31 @@
 import SwiftUI
 
 struct PacotesViagensView: View {
+    
+    // MARK: - Atributos
+    var pacoteDeViagem: PacoteDeViagem
+    
     var body: some View {        
         GeometryReader { view in
             VStack {
-                Image("nova-york-1")
+                Image(self.pacoteDeViagem.imagens.first ?? "")
                     .resizable()
                     .frame(height: 135)
                     .aspectRatio(contentMode: .fill)
                     .clipped()
-                Text("Nova York")
+                Text(self.pacoteDeViagem.titulo)
                     .font(.custom("Avenir Black", size: 12))
                     .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
-                Text("Aéreo + Hotel")
+                Text(self.pacoteDeViagem.descricao)
                     .font(.custom("Avenir", size: 10))
                     .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
-                Text("01 de mar ~ 30 de jul")
+                Text(self.pacoteDeViagem.dataValidade)
                     .font(.custom("Avenir", size: 10))
                     .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
                 Text("a partir de")
                     .font(.custom("Avenir", size: 9))
                     .frame(minWidth: 0, maxWidth: view.size.width, alignment: .trailing)
-                Text("R$ 3.325")
+                Text("R$ \(self.pacoteDeViagem.valor)")
                     .font(.custom("Avenir Black", size: 16))
                     .frame(minWidth: 0, maxWidth: view.size.width, alignment: .trailing)
                     .foregroundColor(.orange)
@@ -49,7 +53,7 @@ struct PacotesViagensView: View {
 
 struct PacotesViagensView_Previews: PreviewProvider {
     static var previews: some View {
-        PacotesViagensView()
+        PacotesViagensView(pacoteDeViagem: pacotesDeViagens[0])
             .previewLayout(PreviewLayout.fixed(width: 180, height: 250))
     }
 }

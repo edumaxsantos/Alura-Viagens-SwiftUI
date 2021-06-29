@@ -22,7 +22,7 @@ struct SecaoPacotesView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(self.pacotes) { pacote in
-                        PacotesViagensView()
+                        PacotesViagensView(pacoteDeViagem: pacote)
                     }
                 }
             }
