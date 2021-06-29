@@ -16,12 +16,42 @@ struct ListaDePacotesView: View {
         })
     }
     
+    init() {
+        UINavigationBar.appearance().backgroundColor = UIColor(red: 247.0/255, green: 247.0/255, blue: 247.0/255, alpha: 1)
+    }
+    
     var body: some View {
-        List {
-            ForEach(categorias.keys.sorted(), id: \.self) { chave in
-                SecaoPacotesView(nomeDaSecao: chave, pacotes: self.categorias[chave]!)
+        NavigationView {
+            if #available(iOS 14.0, *) {
+                ScrollView {
+                    LazyVStack(spacing: 0) {
+                        ForEach(categorias.keys.sorted(), id: \.self) { chave in
+                            SecaoPacotesView(nomeDaSecao: chave, pacotes: self.categorias[chave]!)
+                        }
+                    }
+                    .navigationBarTitle("Pacotes")
+                    .padding(.leading, 5)
+                    .padding(.trailing, 5)
+                }
+            } else {
+                List {
+                    ForEach(categorias.keys.sorted(), id: \.self) { chave in
+                        SecaoPacotesView(nomeDaSecao: chave, pacotes: self.categorias[chave]!)
+                    }
+                }
+                .navigationBarTitle("Pacotes")
+                .padding(.leading, -10)
+                .padding(.trailing, -10)
+                .onAppear {
+                    UITableView.appearance().separatorStyle = .none
+                    UITableView.appearance().backgroundColor = UIColor(red: 247.0/255, green: 247.0/255, blue: 247.0/255, alpha: 1)
+                }
+                .onDisappear {
+                    UITableView.appearance().separatorStyle = .singleLine
+                }
             }
         }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
