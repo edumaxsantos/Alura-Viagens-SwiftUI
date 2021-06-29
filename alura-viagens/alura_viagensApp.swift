@@ -12,7 +12,7 @@ struct alura_viagensApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-            PacotesViagensView()
+            SecaoPacotesView()
         }
     }
 }
