@@ -48,6 +48,6 @@ struct PacotesViagensView: View {
 struct PacotesViagensView_Previews: PreviewProvider {
     static var previews: some View {
         PacotesViagensView()
-            .previewLayout(PreviewLayout.fixed(width: 180, height: 250))
+            //.previewLayout(PreviewLayout.fixed(width: 180, height: 250))
     }
 }
