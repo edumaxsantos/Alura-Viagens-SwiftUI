@@ -11,6 +11,8 @@ struct DetalhesViagemView: View {
     // MARK: - Atributos
     var pacoteDeViagem: PacoteDeViagem
     
+    let corDaFonte = Color(red: 77.0/255, green: 77.0/255, blue: 77.0/255)
+    
     
     var body: some View {
         GeometryReader { view in
@@ -20,8 +22,34 @@ struct DetalhesViagemView: View {
                     .frame(height: 200)
                 Text(pacoteDeViagem.titulo.uppercased())
                     .font(.custom("Avenir Black", size: 26))
-                    .foregroundColor(Color(red: 77.0/255, green: 77.0/255, blue: 77.0/255))
+                    .foregroundColor(corDaFonte)
                     .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                Text(pacoteDeViagem.descricao)
+                    .font(.custom("Avenir", size: 16))
+                    .foregroundColor(corDaFonte)
+                    .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                Text(pacoteDeViagem.detalhes)
+                    .font(.custom("Avenir Black", size: 16))
+                    .foregroundColor(corDaFonte)
+                    .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                HStack {
+                    VStack {
+                        Text("Válido para o período de:")
+                            .font(.custom("Avenir", size: 14))
+                            .foregroundColor(corDaFonte)
+                            .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                        Text(pacoteDeViagem.dataValidade)
+                            .font(.custom("Avenir", size: 14))
+                            .foregroundColor(corDaFonte)
+                            .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                    }
+                    VStack {
+                        Text("R$ \(pacoteDeViagem.valor)")
+                            .font(.custom("Avenir Black", size: 25))
+                            .foregroundColor(.orange)
+                            .frame(minWidth: 0, maxWidth: view.size.width, alignment: .trailing)
+                    }
+                }
             }
         }
     }
