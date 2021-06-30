@@ -9,22 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var selection = "destaques"
-    
     var body: some View {
-        TabView(selection: $selection) {
+        TabView() {
             DestaquesView()
                 .tabItem {
                     Text("Destaques")
                     Image("icone-destaques")
                 }
-                .tag("destaques")
             ListaDePacotesView()
                 .tabItem {
                     Text("Lista de Pacotes")
                     Image("icone-mala")
                 }
-                .tag("pacotes")
         }
     }
 }

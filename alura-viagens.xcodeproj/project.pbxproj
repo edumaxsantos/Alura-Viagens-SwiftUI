@@ -12,6 +12,7 @@
 		FB4576CD268AC07000512C59 /* SecaoPacotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4576CC268AC07000512C59 /* SecaoPacotesView.swift */; };
 		FB4576CF268AC65F00512C59 /* ListaDePacotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4576CE268AC65F00512C59 /* ListaDePacotesView.swift */; };
 		FB4576D3268C009300512C59 /* DestaquesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4576D2268C009300512C59 /* DestaquesView.swift */; };
+		FB4576D6268C284200512C59 /* DetalhesViagemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4576D5268C284200512C59 /* DetalhesViagemView.swift */; };
 		FB5D060526891DF1000C7348 /* alura_viagensApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D060426891DF1000C7348 /* alura_viagensApp.swift */; };
 		FB5D060726891DF1000C7348 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5D060626891DF1000C7348 /* ContentView.swift */; };
 		FB5D060926891DF3000C7348 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB5D060826891DF3000C7348 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		FB4576CC268AC07000512C59 /* SecaoPacotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecaoPacotesView.swift; sourceTree = "<group>"; };
 		FB4576CE268AC65F00512C59 /* ListaDePacotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDePacotesView.swift; sourceTree = "<group>"; };
 		FB4576D2268C009300512C59 /* DestaquesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestaquesView.swift; sourceTree = "<group>"; };
+		FB4576D5268C284200512C59 /* DetalhesViagemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesViagemView.swift; sourceTree = "<group>"; };
 		FB5D060126891DF1000C7348 /* alura-viagens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alura-viagens.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5D060426891DF1000C7348 /* alura_viagensApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alura_viagensApp.swift; sourceTree = "<group>"; };
 		FB5D060626891DF1000C7348 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 			path = Pacotes;
 			sourceTree = "<group>";
 		};
+		FB4576D4268C283100512C59 /* Detalhes */ = {
+			isa = PBXGroup;
+			children = (
+				FB4576D5268C284200512C59 /* DetalhesViagemView.swift */,
+			);
+			path = Detalhes;
+			sourceTree = "<group>";
+		};
 		FB5D05F826891DF1000C7348 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 			children = (
 				FB5D060626891DF1000C7348 /* ContentView.swift */,
 				FB4576D0268C001600512C59 /* Destaques */,
+				FB4576D4268C283100512C59 /* Detalhes */,
 				FB4576D1268C002E00512C59 /* Pacotes */,
 			);
 			path = Views;
@@ -219,6 +230,7 @@
 				FB4576CD268AC07000512C59 /* SecaoPacotesView.swift in Sources */,
 				FB5D061C26894267000C7348 /* HeaderView.swift in Sources */,
 				FB5D06202689754A000C7348 /* MapaView.swift in Sources */,
+				FB4576D6268C284200512C59 /* DetalhesViagemView.swift in Sources */,
 				FB5D0622268A9143000C7348 /* PacotesViagensView.swift in Sources */,
 				FB4576D3268C009300512C59 /* DestaquesView.swift in Sources */,
 				FB5D060726891DF1000C7348 /* ContentView.swift in Sources */,
