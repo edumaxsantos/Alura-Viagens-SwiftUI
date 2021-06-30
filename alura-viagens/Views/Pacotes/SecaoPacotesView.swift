@@ -35,6 +35,6 @@ struct SecaoPacotesView: View {
 struct SecaoPacotesView_Previews: PreviewProvider {
     static var previews: some View {
         SecaoPacotesView(nomeDaSecao: pacotesDeViagens[0].categoria.rawValue, pacotes: pacotesDeViagens)
-            .previewLayout(.fixed(width: 600, height: 300))
+            .previewLayout(.fixed(width: 600, height: 400))
     }
 }
