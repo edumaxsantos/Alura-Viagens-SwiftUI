@@ -16,7 +16,10 @@ struct ListaDePacotesView: View {
         })
     }
     
+    var backgroundColor: UIColor?
+    
     init() {
+        backgroundColor = UINavigationBar.appearance().backgroundColor
         UINavigationBar.appearance().backgroundColor = UIColor(red: 247.0/255, green: 247.0/255, blue: 247.0/255, alpha: 1)
     }
     
@@ -48,6 +51,7 @@ struct ListaDePacotesView: View {
                 }
                 .onDisappear {
                     UITableView.appearance().separatorStyle = .singleLine
+                    UINavigationBar.appearance().backgroundColor = self.backgroundColor
                 }
             }
         }

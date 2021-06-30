@@ -9,31 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    
     var body: some View {
-        NavigationView {
-            GeometryReader { view in
-                // MARK: - VStack Principal
-                VStack {
-                    HeaderView()
-                        .frame(width: view.size.width, height: self.horizontalSizeClass == .compact ? 200 : 350, alignment: .top)
-                    List(viagens) { viagem in
-                        NavigationLink(destination: MapaView(coordenada: viagem.localizacao).navigationBarTitle("Localização")) {
-                            CelulaViagemView(viagem: viagem)
-                        }
-                    }.navigationBarTitle("")
+        TabView {
+            DestaquesView()
+                .tabItem {
+                    Text("Destaques")
+                    Image("icone-destaques")
                 }
-            }
-            .edgesIgnoringSafeArea(.all)
-        }.navigationViewStyle(StackNavigationViewStyle())
+            ListaDePacotesView()
+                .tabItem {
+                    Text("Lista de Pacotes")
+                    Image("icone-mala")
+                }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HeaderView()
+            ContentView()
         }
     }
 }

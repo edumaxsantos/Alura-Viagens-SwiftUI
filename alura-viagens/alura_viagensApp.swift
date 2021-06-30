@@ -11,8 +11,8 @@ import SwiftUI
 struct alura_viagensApp: App {
     var body: some Scene {
         WindowGroup {
-            //ContentView()
-            ListaDePacotesView()
+            ContentView()
+            //ListaDePacotesView()
         }
     }
 }
