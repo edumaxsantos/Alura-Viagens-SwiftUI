@@ -48,7 +48,37 @@ struct DetalhesViagemView: View {
                             .font(.custom("Avenir Black", size: 25))
                             .foregroundColor(.orange)
                             .frame(minWidth: 0, maxWidth: view.size.width, alignment: .trailing)
+                        Text("Sem taxas em até 12x")
+                            .font(.custom("Avenir", size: 14))
+                            .foregroundColor(corDaFonte)
+                            .frame(minWidth: 0, maxWidth: view.size.width, alignment: .trailing)
                     }
+                }
+                
+                VStack {
+                    Text("O que está incluso")
+                        .font(.custom("Avenir", size: 20))
+                        .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                    
+                    HStack {
+                        VStack {
+                            Image("icone-apartamento")
+                            Text("Apartamento")
+                                .font(.custom("Avenir", size: 14))
+                                .foregroundColor(corDaFonte)
+                                .frame(minWidth: 0, maxWidth: view.size.width, alignment: .center)
+                        }
+                        Spacer()
+                        VStack {
+                            Image("icone-aviao")
+                            Text("Passagem Aérea")
+                                .font(.custom("Avenir", size: 14))
+                                .foregroundColor(corDaFonte)
+                                .frame(minWidth: 0, maxWidth: view.size.width, alignment: .center)
+                        }
+                    }
+                    .padding(.leading, 40)
+                    .padding(.trailing, 40)
                 }
             }
         }
