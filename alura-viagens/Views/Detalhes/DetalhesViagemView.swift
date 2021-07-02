@@ -21,6 +21,9 @@ struct DetalhesViagemView: View {
                     Image(pacoteDeViagem.imagens[0])
                         .resizable()
                         .frame(height: 200)
+                }
+                VStack {
+                    
                     Text(pacoteDeViagem.titulo.uppercased())
                         .font(.custom("Avenir Black", size: 26))
                         .foregroundColor(corDaFonte)
@@ -60,6 +63,8 @@ struct DetalhesViagemView: View {
                         }
                     }
                     
+                    Divider()
+                    
                     VStack {
                         Text("O que está incluso")
                             .font(.custom("Avenir", size: 20))
@@ -81,17 +86,20 @@ struct DetalhesViagemView: View {
                                     .font(.custom("Avenir", size: 14))
                                     .foregroundColor(corDaFonte)
                                     .frame(minWidth: 0, maxWidth: view.size.width, alignment: .center)
+                                    .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                             }
                         }
                         .padding(.leading, 40)
                         .padding(.trailing, 40)
+                        
+                        Divider()
                     }
                 }
                 .padding(.leading, 20)
                 .padding(.trailing, 20)
             }
-            
         }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
