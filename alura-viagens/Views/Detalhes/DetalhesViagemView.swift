@@ -16,71 +16,79 @@ struct DetalhesViagemView: View {
     
     var body: some View {
         GeometryReader { view in
-            VStack {
-                Image(pacoteDeViagem.imagens[0])
-                    .resizable()
-                    .frame(height: 200)
-                Text(pacoteDeViagem.titulo.uppercased())
-                    .font(.custom("Avenir Black", size: 26))
-                    .foregroundColor(corDaFonte)
-                    .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
-                Text(pacoteDeViagem.descricao)
-                    .font(.custom("Avenir", size: 16))
-                    .foregroundColor(corDaFonte)
-                    .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
-                Text(pacoteDeViagem.detalhes)
-                    .font(.custom("Avenir Black", size: 16))
-                    .foregroundColor(corDaFonte)
-                    .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
-                HStack {
-                    VStack {
-                        Text("Válido para o período de:")
-                            .font(.custom("Avenir", size: 14))
-                            .foregroundColor(corDaFonte)
-                            .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
-                        Text(pacoteDeViagem.dataValidade)
-                            .font(.custom("Avenir", size: 14))
-                            .foregroundColor(corDaFonte)
-                            .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
-                    }
-                    VStack {
-                        Text("R$ \(pacoteDeViagem.valor)")
-                            .font(.custom("Avenir Black", size: 25))
-                            .foregroundColor(.orange)
-                            .frame(minWidth: 0, maxWidth: view.size.width, alignment: .trailing)
-                        Text("Sem taxas em até 12x")
-                            .font(.custom("Avenir", size: 14))
-                            .foregroundColor(corDaFonte)
-                            .frame(minWidth: 0, maxWidth: view.size.width, alignment: .trailing)
-                    }
-                }
-                
+            ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    Text("O que está incluso")
-                        .font(.custom("Avenir", size: 20))
+                    Image(pacoteDeViagem.imagens[0])
+                        .resizable()
+                        .frame(height: 200)
+                    Text(pacoteDeViagem.titulo.uppercased())
+                        .font(.custom("Avenir Black", size: 26))
+                        .foregroundColor(corDaFonte)
                         .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
-                    
+                    Text(pacoteDeViagem.descricao)
+                        .font(.custom("Avenir", size: 16))
+                        .foregroundColor(corDaFonte)
+                        .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                    Spacer()
+                        .frame(height: 15)
+                    Text(pacoteDeViagem.detalhes)
+                        .font(.custom("Avenir Black", size: 16))
+                        .foregroundColor(corDaFonte)
+                        .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                    Spacer()
+                        .frame(height: 15)
                     HStack {
                         VStack {
-                            Image("icone-apartamento")
-                            Text("Apartamento")
+                            Text("Válido para o período de:")
                                 .font(.custom("Avenir", size: 14))
                                 .foregroundColor(corDaFonte)
-                                .frame(minWidth: 0, maxWidth: view.size.width, alignment: .center)
+                                .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                            Text(pacoteDeViagem.dataValidade)
+                                .font(.custom("Avenir", size: 14))
+                                .foregroundColor(corDaFonte)
+                                .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
                         }
-                        Spacer()
                         VStack {
-                            Image("icone-aviao")
-                            Text("Passagem Aérea")
+                            Text("R$ \(pacoteDeViagem.valor)")
+                                .font(.custom("Avenir Black", size: 25))
+                                .foregroundColor(.orange)
+                                .frame(minWidth: 0, maxWidth: view.size.width, alignment: .trailing)
+                            Text("Sem taxas em até 12x")
                                 .font(.custom("Avenir", size: 14))
                                 .foregroundColor(corDaFonte)
-                                .frame(minWidth: 0, maxWidth: view.size.width, alignment: .center)
+                                .frame(minWidth: 0, maxWidth: view.size.width, alignment: .trailing)
                         }
                     }
-                    .padding(.leading, 40)
-                    .padding(.trailing, 40)
+                    
+                    VStack {
+                        Text("O que está incluso")
+                            .font(.custom("Avenir", size: 20))
+                            .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                        
+                        HStack {
+                            VStack {
+                                Image("icone-apartamento")
+                                Text("Apartamento")
+                                    .font(.custom("Avenir", size: 14))
+                                    .foregroundColor(corDaFonte)
+                                    .frame(minWidth: 0, maxWidth: view.size.width, alignment: .center)
+                            }
+                            Spacer()
+                                .frame(height: 20)
+                            VStack {
+                                Image("icone-aviao")
+                                Text("Passagem Aérea")
+                                    .font(.custom("Avenir", size: 14))
+                                    .foregroundColor(corDaFonte)
+                                    .frame(minWidth: 0, maxWidth: view.size.width, alignment: .center)
+                            }
+                        }
+                        .padding(.leading, 40)
+                        .padding(.trailing, 40)
+                    }
                 }
             }
+            
         }
     }
 }
