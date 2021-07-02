@@ -39,23 +39,25 @@ struct DetalhesViagemView: View {
                     
                 }
                 VStack {
+                    Group {
+                        Text(pacoteDeViagem.titulo.uppercased())
+                            .font(.custom("Avenir Black", size: 26))
+                            .foregroundColor(corDaFonte)
+                            .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                        Text(pacoteDeViagem.descricao)
+                            .font(.custom("Avenir", size: 16))
+                            .foregroundColor(corDaFonte)
+                            .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                        Spacer()
+                            .frame(height: 15)
+                        Text(pacoteDeViagem.detalhes)
+                            .font(.custom("Avenir Black", size: 16))
+                            .foregroundColor(corDaFonte)
+                            .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
+                        Spacer()
+                            .frame(height: 15)
+                    }
                     
-                    Text(pacoteDeViagem.titulo.uppercased())
-                        .font(.custom("Avenir Black", size: 26))
-                        .foregroundColor(corDaFonte)
-                        .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
-                    Text(pacoteDeViagem.descricao)
-                        .font(.custom("Avenir", size: 16))
-                        .foregroundColor(corDaFonte)
-                        .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
-                    Spacer()
-                        .frame(height: 15)
-                    Text(pacoteDeViagem.detalhes)
-                        .font(.custom("Avenir Black", size: 16))
-                        .foregroundColor(corDaFonte)
-                        .frame(minWidth: 0, maxWidth: view.size.width, alignment: .leading)
-                    Spacer()
-                        .frame(height: 15)
                     HStack {
                         VStack {
                             Text("Válido para o período de:")
@@ -113,6 +115,17 @@ struct DetalhesViagemView: View {
                 }
                 .padding(.leading, 20)
                 .padding(.trailing, 20)
+                
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    Text("Escolher opção")
+                        .font(.custom("Avenir Black", size: 16))
+                        .foregroundColor(Color.white)
+                    
+                }
+                .frame(width: view.size.width - 30, height: 40, alignment: .center)
+                .background(Color(red: 221.0/255, green: 58.0/255, blue: 126/255))
             }
         }
         .edgesIgnoringSafeArea(.top)
