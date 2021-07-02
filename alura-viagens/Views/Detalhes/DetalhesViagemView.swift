@@ -13,14 +13,30 @@ struct DetalhesViagemView: View {
     
     let corDaFonte = Color(red: 77.0/255, green: 77.0/255, blue: 77.0/255)
     
+    @Environment(\.presentationMode) var presentationMode
+    
     
     var body: some View {
         GeometryReader { view in
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    Image(pacoteDeViagem.imagens[0])
-                        .resizable()
-                        .frame(height: 200)
+                    ZStack(alignment: .top) {
+                        Image(pacoteDeViagem.imagens[0])
+                            .resizable()
+                            .frame(height: 200)
+                        Button(action: {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Image("icone-voltar")
+                                .resizable()
+                                .renderingMode(Image.TemplateRenderingMode.original)
+                                .frame(width: 15, height: 25, alignment: .leading)
+                                .padding(.leading, 15)
+                                .padding(.top, 45)
+                        }
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    }
+                    
                 }
                 VStack {
                     
