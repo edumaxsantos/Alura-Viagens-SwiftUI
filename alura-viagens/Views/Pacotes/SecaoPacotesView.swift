@@ -24,9 +24,12 @@ struct SecaoPacotesView: View {
                     ForEach(self.pacotes) { pacote in
                         NavigationLink(
                             destination: DetalhesViagemView(pacoteDeViagem: pacote)
+                                .navigationBarTitle("")
+                                .navigationBarHidden(true)
                         ) {
                             PacotesViagensView(pacoteDeViagem: pacote)
                         }
+                        .buttonStyle(PlainButtonStyle())
                         
                     }
                 }

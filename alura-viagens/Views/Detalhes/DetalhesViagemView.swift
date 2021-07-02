@@ -87,6 +87,8 @@ struct DetalhesViagemView: View {
                         .padding(.trailing, 40)
                     }
                 }
+                .padding(.leading, 20)
+                .padding(.trailing, 20)
             }
             
         }
